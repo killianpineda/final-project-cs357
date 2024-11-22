@@ -26,7 +26,7 @@ drawFlight (FlightState plane r dest) = Pictures
   [ drawPlane plane                  
   , drawRoute r                 
   , drawDestination dest              
-  , drawPath (plane : wp ++ [dest])   
+  , drawPath (plane : r ++ [dest])   
   ]
 
 -- Plane
