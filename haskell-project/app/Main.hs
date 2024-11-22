@@ -1,10 +1,10 @@
 
-import Graphics.Gloss
-
-main :: IO ()
-main = display (InWindow "Gloss Test" (400, 400) (10, 10)) white (Circle 80)
-
 module Main where
 
+import Graphics.Gloss
+import Graphics.Gloss.Data.Picture
+import Display
+
 main :: IO ()
-main = putStrLn "Hello, Haskell!"
+main = display (InWindow "Flight Simulation" (800, 600) (100, 100)) green 60 initialState drawFlight                                            
+
