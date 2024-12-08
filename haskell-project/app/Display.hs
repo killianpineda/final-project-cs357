@@ -1,6 +1,5 @@
 module Display where
 
-
 import Graphics.Gloss
 import Graphics.Gloss.Data.Color
 
