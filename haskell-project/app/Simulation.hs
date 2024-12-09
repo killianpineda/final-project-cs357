@@ -1,42 +1,7 @@
--- module Simulation where
-
--- import Graphics.Gloss.Interface.Pure.Game
--- import FlightState
--- import Validation
-
--- -- Update simulation state
--- updateState :: Float -> SimulationState -> SimulationState
--- updateState deltaTime state = state
---   { flights = map (updateFlight deltaTime (currentTime state)) (flights state)
---   , currentTime = currentTime state + deltaTime
---   }
-
--- -- Update individual flight progress
--- updateFlight :: Float -> Float -> Flight -> Flight
--- updateFlight deltaTime currentTime flight = flight { progress = min 1 ((currentTime + deltaTime - departureTime flight) / duration flight) }
-
--- -- Handle user inputs
--- handleEvent :: Event -> SimulationState -> SimulationState
--- handleEvent (EventKey (MouseButton LeftButton) Down _ mousePos) state =
---   addAirport state "New Airport" mousePos
--- handleEvent _ state = state
-
--- -- Add a new airport
--- addAirport :: SimulationState -> String -> Point -> SimulationState
--- addAirport state name coords = state { airports = newAirport : airports state }
---   where newAirport = Airport { airportID = show (length (airports state) + 1), name = name, coordinates = coords }
-
--- -- Add a new flight
--- addFlight :: SimulationState -> Flight -> SimulationState
--- addFlight state flight
---   | validateFlight state flight = state { flights = flight : flights state }
---   | otherwise = state
-
 module Simulation where
 
 import Graphics.Gloss.Interface.Pure.Game
 import FlightState
-import Validation
 
 -- Update simulation state (handles flight progress and events)
 updateState :: Float -> SimulationState -> SimulationState

@@ -1,37 +1,3 @@
--- module Render where
-
--- import Graphics.Gloss
--- import FlightState
-
--- -- Render the entire simulation
--- renderSimulation :: SimulationState -> Picture
--- renderSimulation state = Pictures
---   [ drawAirports (airports state)
---   , drawFlights (flights state)
---   ]
-
--- -- Render Airports
--- drawAirports :: [Airport] -> Picture
--- drawAirports = Pictures . map drawAirport
-
--- drawAirport :: Airport -> Picture
--- drawAirport (Airport _ name (x, y)) =
---   Pictures [Translate x y $ Color red $ circleSolid 7, Translate (x - 30) (y - 20) $ Scale 0.1 0.1 $ Color black $ Text name]
-
--- -- Render Flights
--- drawFlights :: [Flight] -> Picture
--- drawFlights = Pictures . map drawFlightProgress
-
--- drawFlightProgress :: Flight -> Picture
--- drawFlightProgress flight = Translate x y $ Color white $ circleSolid 5
---   where
---     (x, y) = interpolate (coordinates $ origin flight) (coordinates $ destination flight) (progress flight)
-
--- -- Interpolate between two points
--- interpolate :: Point -> Point -> Float -> Point
--- interpolate (x1, y1) (x2, y2) t = (x1 + t * (x2 - x1), y1 + t * (y2 - y1))
-
-
 module Render where
 
 import Graphics.Gloss
