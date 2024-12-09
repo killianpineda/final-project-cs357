@@ -26,11 +26,19 @@ data SimulationState = SimulationState
   } deriving (Show, Eq)
 
 -- Initial state with predefined airports
+-- Initial state with predefined airports
 initialState :: SimulationState
 initialState = SimulationState
-  { airports = [ Airport "1" "Airport A" (-200, 150)
-               , Airport "2" "Airport B" (200, 150)
-               , Airport "3" "Airport C" (0, -150)
+  { airports = [ Airport "1" "ATL" (193, -69.5)
+               , Airport "2" "LAX"  (-319, -18.5)
+               , Airport "3" "DFW" (-9, -93.5)
+               , Airport "4" "DEN" (-108, 42.5)
+               , Airport "5" "ORD" (113, 76.5)
+               , Airport "6" "JFK" (308, 97.5)
+               , Airport "7" "MIA" (269, -190.5)
+               , Airport "8" "LAS" (-270, 1.5)
+               , Airport "9" "CLT" (236, -25.5)
+               , Airport "10" "SEA" (-310, 228.5)
                ]
   , flights = []
   , currentTime = 0
